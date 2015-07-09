@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <script>var module = {};</script>
+    <script src=".\gen.js"></script>
+    <script>var gen = module.exports;</script>
+    <title>מייצר משפטים</title>
+    <link href=".\style.css" rel="stylesheet"/>
+  </head>
+  <body dir='rtl' lang='he'>
+    <h1>מחולל משפטים שנוצר ע"י תלמיד מחונחן</h1>
+    <p>גירסא 2.3 בטא(אני לא באמת ספרתי עד עכשיו), אשמח לקבל משוב והצעות</p>
+    <blockquote>
+      <span></span>
+      <span contenteditable>... עירכו את זה כדי להוסיף המשך שלכם</span>
+    </blockquote>
+    <script>var domGen = function(){document.getElementsByTagName('blockquote')[0].firstElementChild.innerHTML = gen();};domGen();</script>
+    <button onclick="domGen();">יצר אחר</button>
+    <br/>
+    <a href=".\gen.js">הקוד שמייצר את המשפטים</a>
+  </body>
+</html>

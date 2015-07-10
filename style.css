@@ -28,8 +28,10 @@ body, button{
     box-shadow:0px 0.3em 0px rgb(176, 147, 62);
     font-size:1.3em;
   }
-  a{
-    margin-top:2.5em;
+  @media (max-width: 1000px) {
+    button{
+      font-size:3em;
+    }
   }
   button:hover{
     background-color:rgb(218, 182, 77);

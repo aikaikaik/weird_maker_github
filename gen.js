@@ -279,13 +279,40 @@ var actions = {
         "אורי",
         "מחולל המשפטים הזה ממש",
         "זרובבל",
-        "מרגול"
+        "מרגול",
+        "צ'ארלס דרווין"
+      ])
+    },
+    actn:function(){
+      return rndListItem([
+        "אוכל פרציפלוחות תמימות עם",
+        "מגרד את הגב יחד עם",
+        "מגרד את הגב של",
+        "מוריד מערכו של",
+        "מקלל את",
+        "מטיל קללה על",
+        "מלמד אלגברה את",
+        "מרגל אחרי",
+        "אוכל את"
+      ])
+    },
+    psv:function(){
+      return rndListItem([
+        "שנהנה מכל רגע",
+        "ששוחה ביאוש",
+        "שאוכל את עצמו עם מלח",
+        "שמתפלל לדפנה הקדושה עם מלח",
+        "שמתפלל למפיק הקדוש עם מלח",
+        "שאוכל פלאפל",
+        "שאוכל פיתה בלי פלאפל",
+        "שלא אוכל מלח",
+        "שזורע מלח על הפצעים בתקווה שיצמח עץ",
+        "שנהנה מאיזה נוטרינו"
       ])
     }
 };
 
 module.exports =  function(){
-  var str = "";
   with(actions){
     var theObject = object();
     var theObject2 = object();
@@ -300,12 +327,17 @@ module.exports =  function(){
         var theObjes = objes();
         break;
     }
-    str += theObject+" "+adobj()+" "+witha();
-    str += madeBy()+" "+whileThey()+theObject2+" "+adobj()+" "+because();
-    str += ", "+but()+", ";
-    str += voice()+":\""+theObjes+", "+objes_adobjs()+" "+adobjs()+"\", ";
-    str += butSome()+theWayOf()+" שלפיה:\""+theObjes+", "+objes_adobjs()+" "+adobjs()+"\",  ";
-    str += onlyThe(object()+" "+adobj())+" ש"+time()+" "+youMay()+" "+name();
-    return str;
+    var f = function(theObject2,theObjes){
+      var str = "";
+      str += adobj()+" "+witha();
+      str += madeBy()+" "+whileThey()+theObject2+" "+adobj()+" "+because();
+      str += ", "+but()+", ";
+      str += voice()+":\""+theObjes+", "+objes_adobjs()+" "+adobjs()+"\", ";
+      str += butSome()+theWayOf()+" שלפיה:\""+theObjes+", "+objes_adobjs()+" "+adobjs()+"\",  ";
+      str += onlyThe(object()+" "+adobj())+" ש"+time()+" "+youMay()+" "+name();
+      str += " כשהוא "+actn()+" "+name()+" "+psv();
+      return str;
+    };
+    return theObject + " " + f(theObject2,theObjes)+" "+f(theObject,objes())+" "+f(theObject2,theObjes)+" "+f(theObject,theObjes);
   }
 };
